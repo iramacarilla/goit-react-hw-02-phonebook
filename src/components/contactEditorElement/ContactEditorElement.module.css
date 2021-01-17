@@ -1,0 +1,44 @@
+.contact {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding: 30px 20px;
+    width: 60%;
+    height: auto;
+    background-color: teal;
+}
+
+.form {
+    justify-content: center;
+}
+.contact h2{
+    text-align: center;
+    color: #ffffff;
+}
+.form label {
+display: block;
+margin-right: 15px;
+margin-bottom: 30px;
+color: white;
+font-size: 16px;
+text-align: center;
+background-color: teal;
+}
+.form input {
+    border: none;
+    margin-left: 15px;
+    width: 70%;
+    border-radius: 5px;
+    height: 40px;
+    
+}
+.form button {
+    display: block;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 8px;
+    color: #111111;
+    border: none;
+    background-color: #ffffff;
+    font-size: 18px;
+}

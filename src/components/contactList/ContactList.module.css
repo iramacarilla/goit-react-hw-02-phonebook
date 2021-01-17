@@ -1,0 +1,33 @@
+.contactList {
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 70%;
+    padding: 30px;
+    height: auto;
+    background-color: gray;
+}
+.contactList h2 {
+    text-align: center;
+    color: #ffffff;
+}
+.contactData {
+    list-style: none;
+}
+.contactData li {
+    display: flex;
+    justify-content: space-evenly;;
+    margin-bottom: 10px;
+}
+.contactData p { 
+    margin-left: 15px;
+    font-size: 18px;
+}
+.contactData button { 
+    display: block;
+    padding: 10px 40px;
+    border: none;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
