@@ -11,6 +11,18 @@ export default class App extends Component {
     filter:'', 
   }
   
+  componentDidMount() {
+    if (localStorage.getItem('contacts')) 
+    {this.setState({contacts: JSON.parse(localStorage.getItem('contacts'))})}
+  }
+  
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.contacts !== this.state.contacts) {
+    localStorage.setItem('contacts', JSON.stringify(this.state.contacts))}
+    }
+    
+
   setFilter = (e) => {
     this.setState({filter: e.target.value})
   }
@@ -46,8 +58,8 @@ export default class App extends Component {
     return (
       <>
       <ContactEditor onAddForm={this.addContact}/>
-      <Filter value={this.state.filter} onChange={this.setFilter}/>
-      <ContactList contacts= {filtredContact} onDelete={this.deleteContact}/> 
+      {this.state.contacts.length && <Filter value={this.state.filter} onChange={this.setFilter}/>}
+     {this.state.contacts.length && <ContactList contacts= {filtredContact} onDelete={this.deleteContact}/> }
       
       </>
     )

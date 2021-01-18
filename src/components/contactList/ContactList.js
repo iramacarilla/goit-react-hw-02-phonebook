@@ -7,10 +7,10 @@ const ContactList = ({contacts, onDelete}) => {
 <div className={styles.contactList}>
  <h2>Contacts</h2>
  <ul className= {styles.contactData}>
-   {contacts.map(({id, name, number}) => (
+   {contacts.map(({id, name, number}, idx) => (
     <li key={id}>
-   <p>{name}</p>
-   <p>{number}</p>
+   <p> {idx+1}. Name: {name}</p>
+   <p> Number: {number}</p>
    <button type='button' onClick={() => onDelete(id)}>Delete</button>
    </li>
    ))
