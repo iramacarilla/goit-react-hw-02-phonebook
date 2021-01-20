@@ -1,4 +1,40 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
+import ContactEditorElement from '../contactEditorElement/ContactEditorElement'
+
+const initialState = {
+  name: '',
+  number: '',
+}
+
+const ContactEditor = ({onAddForm}) => {
+
+const[state, setState] = useState({...initialState})  
+
+    const onHandelChange = (e) => {
+        const {name} = e.target
+        setState({...state, [name]: e.target.value})
+      }
+      
+  const  handelSubmit = (e) => {
+    e.preventDefault();
+    
+   onAddForm({name: state.name, number: state.number})
+    setState({...initialState})
+    }
+    
+  
+        return (
+          <ContactEditorElement name={state.name} number={state.number} 
+          onChange={handelSubmit} onHandelChange={onHandelChange}/>
+           
+        )
+    
+}
+
+export default ContactEditor
+
+
+/*import React, { Component } from 'react'
 import ContactEditorElement from '../contactEditorElement/ContactEditorElement'
 
 export default class ContactEditor extends Component {
@@ -25,5 +61,4 @@ export default class ContactEditor extends Component {
            
         )
     }
-}
-
+}*/

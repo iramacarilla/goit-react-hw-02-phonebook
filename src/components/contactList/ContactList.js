@@ -11,7 +11,7 @@ const ContactList = ({contacts, onDelete}) => {
     <li key={id}>
    <p> {idx+1}. Name: {name}</p>
    <p> Number: {number}</p>
-   <button type='button' onClick={() => onDelete(id)}>Delete</button>
+   <button type='button' onClick={onDelete} data-id={id}>Delete</button>
    </li>
    ))
    }
